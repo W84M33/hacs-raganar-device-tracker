@@ -1,0 +1,33 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ragnar Device Tracker",
+        "description": "Connect to the Ragnar Nmap ping endpoint.",
+        "data": {
+          "url": "Endpoint URL",
+          "scan_interval": "Scan interval (seconds)",
+          "missed_scans": "Missed scans before away",
+          "ignore_macs": "MAC addresses to omit (comma-separated)",
+          "name_format": "Device name format"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the scan endpoint."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "url": "Endpoint URL",
+          "scan_interval": "Scan interval (seconds)",
+          "missed_scans": "Missed scans before away",
+          "ignore_macs": "MAC addresses to omit (comma-separated)",
+          "name_format": "Device name format"
+        }
+      }
+    }
+  }
+}
