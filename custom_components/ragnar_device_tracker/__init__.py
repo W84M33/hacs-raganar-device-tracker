@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import async_config_entry_first_refresh
 
 from .const import DOMAIN, PLATFORMS
 from .coordinator import RagnarDataUpdateCoordinator
@@ -13,7 +12,7 @@ from .coordinator import RagnarDataUpdateCoordinator
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Ragnar Device Tracker from a config entry."""
     coordinator = RagnarDataUpdateCoordinator(hass, entry)
-    await async_config_entry_first_refresh(coordinator)
+    await coordinator.async_config_entry_first_refresh()
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = coordinator
     entry.async_on_unload(entry.add_update_listener(_async_update_listener))
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
