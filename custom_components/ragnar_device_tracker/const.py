@@ -7,7 +7,7 @@ from datetime import timedelta
 DOMAIN = "ragnar_device_tracker"
 NAME = "Ragnar Device Tracker"
 VERSION = "0.1.0"
-DEFAULT_URL = "https://ragnar-baba.graz.local/api/scan/nmap-ping"
+DEFAULT_URL = ""
 DEFAULT_SCAN_INTERVAL = 60
 DEFAULT_MISSED_SCANS = 2
 DEFAULT_NAME_FORMAT = "{hostname} | {vendor} | {ip} | {mac}"
